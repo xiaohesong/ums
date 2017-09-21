@@ -1,0 +1,24 @@
+{
+  "name": "ums",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "antd": "^2.13.2",
+    "babel-plugin-import": "^1.4.0",
+    "echarts": "^3.7.1",
+    "react": "^15.6.1",
+    "react-app-rewired": "^1.2.9",
+    "react-dom": "^15.6.1",
+    "react-router-dom": "^4.2.2",
+    "webpack": "^3.6.0"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.13"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
