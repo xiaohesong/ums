@@ -1,6 +1,7 @@
 import React from 'react';
-import { Select, Alert, Button } from 'antd';
+import { Select, Alert, Button,Mention } from 'antd';
 import Fetch from '../until/MyFetch'
+import '../stylesheets/Customer.css'
 
 const Option = Select.Option;
 
@@ -33,21 +34,28 @@ class ConfigPermission extends React.Component{
         })
 
         return(
-            <div className="customer-permission">
-                <span>请选择</span>
-                <Select
-                    mode="multiple"
-                    style={{ width: '20%' }}
-                    placeholder="Please select"
-                    defaultValue={this.state.defaultRoleIds}
-                    onChange={this.handleChange}
-                >
-                    {children}
-                </Select>
-                <Alert message="请选择角色" type="error" style={{ width: '20%', marginLeft: '38px', display: this.state.displayable }} />
-                <Button onClick={this.doSmt} type='primary'>
-                    更新权限
-                </Button>
+            <div className="permission-content">
+                <div className="customer-permission">
+                    <p>{this.state.customer.name}</p>
+                </div>
+                <div className="customer-permission">
+                    <Select
+                        mode="multiple"
+                        style={{ width: '20%' }}
+                        placeholder="Please select"
+                        defaultValue={this.state.defaultRoleIds}
+                        onChange={this.handleChange}
+                    >
+                        {children}
+                    </Select>
+                    <Alert message="请选择角色" type="error" style={{ width: '20%', marginLeft: '38px', display: this.state.displayable }} />
+
+                </div>
+                <div className="customer-permission">
+                    <Button onClick={this.doSmt} type='primary'>
+                        更新权限
+                    </Button>
+                </div>
             </div>
         )
     }

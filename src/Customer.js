@@ -2,11 +2,11 @@ import React, {Component} from 'react';
 import {Button, message, Modal, Table} from 'antd';
 import Form from './customers/NewForm';
 import Fetch from './until/MyFetch';
-import EditForm from './customers/EditForm'
-import ConfigPermission from './customers/ConfigPermission'
-import Action from "./permissions/Customer"
+import EditForm from './customers/EditForm';
+import ConfigPermission from './customers/ConfigPermission';
+import Action from "./permissions/Customer";
 
-import './stylesheets/PageLoading.css'
+import './stylesheets/PageLoading.css';
 
 const confirm = Modal.confirm;
 
