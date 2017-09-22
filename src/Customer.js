@@ -178,9 +178,6 @@ class Customer extends Component {
                         <Button onClick={this.toNew}>添加用户</Button>
                     </div>
                     <div>
-                        {/*<div className="pageloading" style={{display: this.state.pageLoading ? 'block' : 'none'}}>*/}
-                            {/*<Spin size='large' tip="玩命加载中..."/>*/}
-                        {/*</div>*/}
                         <Table columns={columns}
                                rowKey={record => record.id} onChange={this.handleHeaderChange}
                                dataSource={this.state.customers}/>
