@@ -17,7 +17,7 @@ class AntMenu extends React.Component {
         mode: Until.store("menuMode")  || 'inline',
         theme: Until.store("menuTheme") || 'light',
         selectedKeys: ['hello'],
-        openKeys: ['customers']
+        openKeys: []
     }
 
     changeMode = (value) => {
@@ -64,7 +64,9 @@ class AntMenu extends React.Component {
                     style={{width: 240}}
                     defaultSelectedKeys={this.state.selectedKeys}
                     defaultOpenKeys={this.state.openKeys}
+                    onOpenChange={this.onOpenChange}
                     selectedKeys={[key]}
+                    defaultOpenKeys={this.state.openKeys}
                     mode={this.state.mode}
                     theme={this.state.theme}
                 >
@@ -107,6 +109,12 @@ class AntMenu extends React.Component {
         })
         window.location.href = '/login'
         // this.props.history.push(`/`)
+    }
+
+    onOpenChange = (openKeys) => {
+      this.setState({
+        openKeys: openKeys.slice(-1)
+      })
     }
 }
 
