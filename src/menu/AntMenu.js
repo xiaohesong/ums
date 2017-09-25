@@ -95,7 +95,6 @@ class AntMenu extends React.Component {
                     </SubMenu>
 
                 </Menu>
-                <Button type='danger' onClick={this.toLogout} style={{marginLeft: '25px'}}> 登出</Button>
                 <span className="ant-divider" style={{ margin: '0 1em' }} />
             </div>
         )

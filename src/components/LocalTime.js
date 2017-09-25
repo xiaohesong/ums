@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Button} from 'antd'
 
 export default class LocalTime extends Component {
   state = {
@@ -7,16 +8,17 @@ export default class LocalTime extends Component {
 
   render() {
     return(
-      <div>
-        <h1>当前时间:</h1>
-        <h2>{this.state.time}</h2>
+      <div className="sub-content-main">
+        <span className='time'>{this.state.time}</span>
+        <span className='logout'>
+          <Button type='danger' onClick={this.toLogout} style={{marginLeft: '25px'}}> 登出</Button>
+        </span>
       </div>
     )
   }
 
   componentDidMount() {
-    let self = this
-    setInterval(self.resetState, 1000);
+    setInterval(this.resetState, 1000);
   }
 
   resetState = () => {

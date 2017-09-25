@@ -30,15 +30,20 @@ div.new-form, .edit-form input{
 
 div.sub-content {
   width: auto;
-  margin-right: 20px;
-  height: auto;
+  height: 50px;
   background-color: #ecf6fd;
-  text-align: center;
 }
 
-div.sub-content h2 {
+div.sub-content-main span.time{
   color: #108ee9;
+  font-size: 20px;
 }
+
+div.sub-content-main span.logout{
+  display: inline-block;
+  margin-right: 0px;
+}
+
 
 div.main-body{
   display: inline-block;
@@ -49,6 +54,7 @@ div.main-body{
 
 div.main-menu{
   width: 15%;
+  margin-top: 5px;
   vertical-align: top;
   display: inline-block;
   min-height: 360px;
