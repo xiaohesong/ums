@@ -1,20 +1,8 @@
-div.tool-header{
-    margin-left: 30px;
-    margin-top: 50px;
-}
-
-div.tool-new-form{
-    margin-top: 50px;
-}
 
 div.tool-new-form input {
     width: 30%;
 }
 
-div.tool-permission {
-    margin-top: 50px;
-    margin-left: 30px;
-}
 
 div.checkbox-menu, div.checkbox-body{
     display: inline-block;
