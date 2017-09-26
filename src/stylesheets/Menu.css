@@ -3,5 +3,12 @@ div.ant-layout ul.menu-collapsed a{
 }
 
 .ant-layout-sider {
-  background-color: white;
+  background-color: #fff;
+}
+
+div.ant-layout-content {
+  min-height: 790px;
+  background-color: #fff;
+  margin: 24px 16px;
+  padding: 24px;
 }

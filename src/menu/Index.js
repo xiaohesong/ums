@@ -44,7 +44,7 @@ class MainMenu extends React.Component {
                         <AntMenu toggle={this.toggle} collapsed={this.state.collapsed} />
                       </Sider>
                       <Layout>
-                        <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', minHeight: 280 }}>
+                        <Content>
                           <div>
                               <Route exact path="/" component={Hello}/>
                               <Route path="/customers" component={AsyncCustomer}/>
