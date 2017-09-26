@@ -9,7 +9,7 @@ import './stylesheets/PageLoading.css';
 
 const confirm = Modal.confirm;
 
-class Customer extends Component {
+export default class Customer extends Component {
     state = {
         type: 'index',
         pageLoading: true,
