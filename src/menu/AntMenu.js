@@ -66,7 +66,6 @@ class AntMenu extends React.Component {
                     defaultOpenKeys={this.state.openKeys}
                     onOpenChange={this.onOpenChange}
                     selectedKeys={[key]}
-                    defaultOpenKeys={this.state.openKeys}
                     mode={this.state.mode}
                     theme={this.state.theme}
                 >
