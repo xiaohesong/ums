@@ -11,11 +11,11 @@ const { SubMenu } = Menu;
 class AntMenu extends React.Component {
     constructor(props){
         super(props)
-        console.log(Until.store("menuTheme"));
+        console.log(Until.store("menuCollapsed"));
     }
 
     state = {
-        collapsed: false,
+        collapsed: JSON.parse(Until.store("menuCollapsed"))  || false,
         mode: Until.store("menuMode")  || 'inline',
         theme: Until.store("menuTheme") || 'light',
         selectedKeys: ['hello'],
@@ -55,7 +55,7 @@ class AntMenu extends React.Component {
 
     render() {
         let key = window.location.pathname.split('/')[1] || 'hello'
-        let collapsedClass = this.state.collapsed ? "menu-collapsed" : ""
+        let collapsedClass = this.state.collapsed ? "" : "menu-collapsed"
         return(
             <div style={{width: 240}}>
                 <Button type="primary" onClick={this.toggleCollapsed} style={{ marginBottom: 16 }}>
@@ -108,6 +108,8 @@ class AntMenu extends React.Component {
     }
 
     toggleCollapsed = () => {
+      Until.store("menuCollapsed", String(!this.state.collapsed))
+      console.log(JSON.parse(Until.store("menuCollapsed")))
       this.setState({
         collapsed: !this.state.collapsed,
       });

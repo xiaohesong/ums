@@ -1,7 +1,3 @@
-.ant-menu-item > a {
-    display: inline-block;
-}
-
 div.main-menu ul.menu-collapsed a{
-  display: none;
+  display: inline-block;
 }
