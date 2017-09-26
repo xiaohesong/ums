@@ -5,11 +5,6 @@ import Fetch from './until/MyFetch';
 import EditForm from './customers/EditForm';
 import ConfigPermission from './customers/ConfigPermission';
 import Action from "./permissions/Customer";
-
-import * as CustomerActions from './actions'
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
-
 import './stylesheets/PageLoading.css';
 
 const confirm = Modal.confirm;
@@ -213,17 +208,3 @@ class Customer extends Component {
         )
     }
 }
-
-const mapStateToProps = state => ({
-    customers: state.customers
-})
-
-const mapDispatchToProps = dispatch => ({
-    actions: bindActionCreators(CustomerActions, dispatch)
-})
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(Customer)
-
