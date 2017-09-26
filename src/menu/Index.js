@@ -5,13 +5,27 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Hello from '../Hello'
 import asyncComponent from "../components/AsyncComponent";
 import LocalTime from '../components/LocalTime'
+import Until from '../until/Store'
 
+import { Layout, Icon } from 'antd'
+const { Header, Sider, Content } = Layout;
 
 const AsyncCustomer = asyncComponent(() => import("../Customer"));
 const AsyncTool = asyncComponent(() => import("../Tool"));
 const AsyncAbout = asyncComponent(() => import("../About"));
 
-class Sider extends React.Component {
+class MainMenu extends React.Component {
+  state = {
+      collapsed: JSON.parse(Until.store("menuCollapsed"))  || false,
+    };
+
+    toggle = () => {
+      Until.store("menuCollapsed", String(!this.state.collapsed))
+      this.setState({
+        collapsed: !this.state.collapsed,
+      });
+    }
+
     render() {
         return (
             <Router>
@@ -19,13 +33,18 @@ class Sider extends React.Component {
                     <div className="sub-content">
                       <LocalTime />
                     </div>
-                    <div className="main-body">
-                      <div className="main-menu">
-                          <div>
-                              <AntMenu successLogout={this.successLogout} />
-                          </div>
-                      </div>
-                      <div className="main-content">
+                    <Layout>
+                      <Sider
+                        trigger={null}
+                        collapsible
+                        collapsed={this.state.collapsed}
+                        width={240}
+                      >
+                        <div className="logo" />
+                        <AntMenu toggle={this.toggle} collapsed={this.state.collapsed} />
+                      </Sider>
+                      <Layout>
+                        <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', minHeight: 280 }}>
                           <div>
                               <Route exact path="/" component={Hello}/>
                               <Route path="/customers" component={AsyncCustomer}/>
@@ -33,8 +52,9 @@ class Sider extends React.Component {
                               <Route path="/tool" component={AsyncTool}/>
                               <Route path="/about" component={AsyncAbout}/>
                           </div>
-                      </div>
-                    </div>
+                        </Content>
+                      </Layout>
+                    </Layout>
                 </div>
             </Router>
         )
@@ -42,4 +62,4 @@ class Sider extends React.Component {
 
 }
 
-export default Sider
+export default MainMenu

@@ -1,3 +1,7 @@
-div.main-menu ul.menu-collapsed a{
+div.ant-layout ul.menu-collapsed a{
   display: inline-block;
+}
+
+.ant-layout-sider {
+  background-color: white;
 }

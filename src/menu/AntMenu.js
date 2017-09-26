@@ -1,10 +1,9 @@
 import React from 'react';
-import { Menu, Icon, Switch, message, Button } from 'antd';
+import { Layout, Menu, Icon, Switch, message, Button } from 'antd';
 import {Link, withRouter} from 'react-router-dom';
 
 import Action from './PermissionIndex'
 import Until from '../until/Store'
-// import '../stylesheets/Menu.css';
 const { SubMenu } = Menu;
 
 
@@ -15,7 +14,6 @@ class AntMenu extends React.Component {
     }
 
     state = {
-        collapsed: JSON.parse(Until.store("menuCollapsed"))  || false,
         mode: Until.store("menuMode")  || 'inline',
         theme: Until.store("menuTheme") || 'light',
         selectedKeys: ['hello'],
@@ -55,11 +53,11 @@ class AntMenu extends React.Component {
 
     render() {
         let key = window.location.pathname.split('/')[1] || 'hello'
-        let collapsedClass = this.state.collapsed ? "" : "menu-collapsed"
+        let collapsedClass = this.props.collapsed ? "" : "menu-collapsed"
         return(
             <div style={{width: 240}}>
-                <Button type="primary" onClick={this.toggleCollapsed} style={{ marginBottom: 16 }}>
-                  <Icon type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'} />
+                <Button type="primary" className="trigger" onClick={this.toggleCollapsed} style={{ marginBottom: 16 }}>
+                  <Icon  type={this.props.collapsed ? 'menu-unfold' : 'menu-fold'} />
                 </Button>
                 <span className="ant-divider" style={{ margin: '0 1em' }} />
                 <Switch onChange={this.changeTheme} defaultChecked={ this.state.theme === 'dark' }/> 主题
@@ -108,11 +106,7 @@ class AntMenu extends React.Component {
     }
 
     toggleCollapsed = () => {
-      Until.store("menuCollapsed", String(!this.state.collapsed))
-      console.log(JSON.parse(Until.store("menuCollapsed")))
-      this.setState({
-        collapsed: !this.state.collapsed,
-      });
+      this.props.toggle()
     }
 
     toLogout = (e) => {
