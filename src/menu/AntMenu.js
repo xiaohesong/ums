@@ -71,7 +71,6 @@ class AntMenu extends React.Component {
                     selectedKeys={[key]}
                     mode={this.state.mode}
                     theme={this.state.theme}
-                    inlineCollapsed={this.state.collapsed}
                 >
                     <Menu.Item key="customers" to='/customers' activeClassName='active'>
                         <Icon type="contacts" />
