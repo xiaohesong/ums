@@ -6,12 +6,12 @@ import '../stylesheets/Header.css'
 export default class LocalTime extends Component {
   state = {
     time: new Date().toLocaleTimeString(),
-    display: 'none'
+    display: false
   }
 
   toggleUserInfo = () => {
     this.setState({
-      display: 'block'
+      display: !this.state.display
     })
   }
 
@@ -43,7 +43,7 @@ export default class LocalTime extends Component {
                       <span className="skio-down-icon"><Icon type="down" /></span>
                     </a>
                   </div>
-                  <ul className="dropdown-menu">
+                  <ul className="dropdown-menu" style={{display: this.state.display ? "block" : "none"}}>
                       <h3 className="ng-binding">user-name</h3>
                       <p className="company ng-binding">hanngzhougongsi</p>
                       <hr style={{margin: "15 0"}} />
