@@ -5,7 +5,14 @@ import '../stylesheets/Header.css'
 
 export default class LocalTime extends Component {
   state = {
-    time: new Date().toLocaleTimeString()
+    time: new Date().toLocaleTimeString(),
+    display: 'none'
+  }
+
+  toggleUserInfo = () => {
+    this.setState({
+      display: 'block'
+    })
   }
 
   render() {
@@ -30,11 +37,13 @@ export default class LocalTime extends Component {
           </ul>
           <ul className="skio-user-info">
               <li className="skio-dropdown-user-info">
-                  <a className="skio-dropdown-toggle" style={{cursor: 'pointer'}} >
-                      Hi，<span className="skio-username">user-name</span>
-                    <span className="skio-down-icon"><Icon type="down" /></span>
-                  </a>
-                  <ul className="dropdown-menu" style={{display: 'none'}}>
+                  <div className='skio-dropdown-toggle'>
+                    <a className="skio-dropdown-toggle" style={{cursor: 'pointer'}} onClick={this.toggleUserInfo} >
+                        Hi，<span className="skio-username">user-name</span>
+                      <span className="skio-down-icon"><Icon type="down" /></span>
+                    </a>
+                  </div>
+                  <ul className="dropdown-menu">
                       <h3 className="ng-binding">user-name</h3>
                       <p className="company ng-binding">hanngzhougongsi</p>
                       <hr style={{margin: "15 0"}} />

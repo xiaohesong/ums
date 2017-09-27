@@ -57,10 +57,31 @@ div.skio-header-list a.skio-dropdown-toggle{
   color: #fff;
 }
 
-div.skio-header-list li.skio-dropdown-user-info :hover{
+div.skio-header-list div.skio-dropdown-toggle :hover{
   color: #ecf6fd;
 }
 
+
 div.skio-header-list span.skio-username{
   font-size: 18px;
+}
+
+ul.dropdown-menu {
+  display: inline-block;
+  width: 212px;
+  right: 16px;
+  color: #212121;
+  box-shadow: 0 0 8px rgba(0,0,0,.1);
+  position: absolute;
+  top: 70px;
+  z-index: 1000;
+  float: left;
+  min-width: 180px;
+  padding: 10px;
+  margin: 2px 0 0;
+  font-size: 14px;
+  text-align: left;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 4px;
 }
