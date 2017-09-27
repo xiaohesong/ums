@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout, Menu, Icon, Switch, message, Button } from 'antd';
+import { Menu, Icon, Switch, message, Button } from 'antd';
 import {Link, withRouter} from 'react-router-dom';
 
 import Action from './PermissionIndex'

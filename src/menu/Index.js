@@ -7,8 +7,8 @@ import asyncComponent from "../components/AsyncComponent";
 import LocalTime from '../components/LocalTime'
 import Until from '../until/Store'
 
-import { Layout, Icon } from 'antd'
-const { Header, Sider, Content } = Layout;
+import { Layout } from 'antd'
+const { Sider, Content } = Layout;
 
 const AsyncCustomer = asyncComponent(() => import("../Customer"));
 const AsyncTool = asyncComponent(() => import("../Tool"));
