@@ -1,0 +1,38 @@
+div.sub-content-main span{
+  margin-top: 25px;
+}
+
+div.sub-content-main a img{
+  margin-top: 5px;
+  min-height: 35px;
+}
+
+
+div.sub-content-main span.time{
+  margin-left: 25px;
+  margin-top: 15px;
+  color: #108ee9;
+  font-size: 20px;
+}
+
+div.sub-content-main span.logout{
+  margin-top: 25px;
+}
+
+div.sub-content-main span ul{
+  margin-right: 65px;
+}
+
+div.sub-content-main span.skio-down-icon{
+  margin-left: 5px;
+  color: #fff;
+}
+
+div.sub-content-main a.skio-dropdown-toggle{
+  color: #fff;
+}
+
+div.sub-content-main span.skio-username{
+  font-size: 16px;
+  color: #fff;
+}
