@@ -37,7 +37,7 @@ div.sub-content-main div.time{
   height: 70px;
   margin-left: 25px;
   padding: 5px;
-  color: #108ee9;
+  color: #ecf6fd;
   font-size: 20px;
 }
 
@@ -49,20 +49,18 @@ div.sub-content-main div.logout{
   margin: 5px 0 0 25px;
 }
 
-div.skio-header-list span ul{
-  margin-right: 65px;
-}
-
 div.skio-header-list span.skio-down-icon{
   margin-left: 5px;
-  color: #fff;
 }
 
 div.skio-header-list a.skio-dropdown-toggle{
   color: #fff;
 }
 
+div.skio-header-list li.skio-dropdown-user-info :hover{
+  color: #ecf6fd;
+}
+
 div.skio-header-list span.skio-username{
-  font-size: 16px;
-  color: #fff;
+  font-size: 18px;
 }
