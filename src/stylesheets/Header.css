@@ -1,5 +1,30 @@
-div.sub-content-main span{
-  margin-top: 25px;
+div.sub-content-main a.skio-logo-link {
+    /*height: 50px;*/
+    /*margin-top: 10px;*/
+    /*display: inline-block;*/
+}
+
+div.skio-logo-link{
+  display: inline-block;
+  /*margin-top: 10px;*/
+}
+
+div.sub-content-main{
+    display: inline-block;
+    width: 30%;
+}
+
+div.skio-header-list {
+  background-color: green;
+  display: inline-block;
+  width: calc(100% - 30%);
+  height: 70px;
+  float: right;
+}
+
+div.skio-header-list ul.skio-user-info {
+  float: right;
+  margin: 25px 65px 0 0;
 }
 
 div.sub-content-main a img{
@@ -8,31 +33,34 @@ div.sub-content-main a img{
 }
 
 
-div.sub-content-main span.time{
+div.sub-content-main div.time{
+  display: inline-block;
+  height: auto;
   margin-left: 25px;
-  margin-top: 15px;
+  margin-top: 5px;
+  padding: 5px;
   color: #108ee9;
   font-size: 20px;
 }
 
-div.sub-content-main span.logout{
+div.skio-header-list span.logout{
   margin-top: 25px;
 }
 
-div.sub-content-main span ul{
+div.skio-header-list span ul{
   margin-right: 65px;
 }
 
-div.sub-content-main span.skio-down-icon{
+div.skio-header-list span.skio-down-icon{
   margin-left: 5px;
   color: #fff;
 }
 
-div.sub-content-main a.skio-dropdown-toggle{
+div.skio-header-list a.skio-dropdown-toggle{
   color: #fff;
 }
 
-div.sub-content-main span.skio-username{
+div.skio-header-list span.skio-username{
   font-size: 16px;
   color: #fff;
 }
