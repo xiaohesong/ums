@@ -18,9 +18,9 @@ export default class LocalTime extends Component {
           <div className='time'>
             {this.state.time}
           </div>
-          <span className='logout'>
-            <Button type='danger' onClick={this.toLogout} style={{marginLeft: '125px', marginTop: '15px'}}> 登出</Button>
-          </span>
+          <div className='logout'>
+            <Button type='danger' onClick={this.toLogout} > 登出</Button>
+          </div>
         </div>
         <div className="skio-header-list">
           <ul>

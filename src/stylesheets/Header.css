@@ -1,12 +1,11 @@
 div.sub-content-main a.skio-logo-link {
-    /*height: 50px;*/
-    /*margin-top: 10px;*/
-    /*display: inline-block;*/
+    display: inline-block;
+    margin-left: 10px;
 }
 
 div.skio-logo-link{
   display: inline-block;
-  /*margin-top: 10px;*/
+  margin-top: 10px;
 }
 
 div.sub-content-main{
@@ -15,7 +14,6 @@ div.sub-content-main{
 }
 
 div.skio-header-list {
-  background-color: green;
   display: inline-block;
   width: calc(100% - 30%);
   height: 70px;
@@ -35,16 +33,20 @@ div.sub-content-main a img{
 
 div.sub-content-main div.time{
   display: inline-block;
-  height: auto;
+  vertical-align: middle;
+  height: 70px;
   margin-left: 25px;
-  margin-top: 5px;
   padding: 5px;
   color: #108ee9;
   font-size: 20px;
 }
 
-div.skio-header-list span.logout{
-  margin-top: 25px;
+div.sub-content-main div.logout{
+  display: inline-block;
+  height: 70px;
+  vertical-align: middle;
+  padding: 5px;
+  margin: 5px 0 0 25px;
 }
 
 div.skio-header-list span ul{
