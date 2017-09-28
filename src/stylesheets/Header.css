@@ -41,13 +41,13 @@ div.sub-content-main div.time{
   font-size: 20px;
 }
 
-div.sub-content-main div.logout{
+/*div.sub-content-main div.logout{
   display: inline-block;
   height: 70px;
   vertical-align: middle;
   padding: 5px;
   margin: 5px 0 0 25px;
-}
+}*/
 
 div.skio-header-list span.skio-down-icon{
   margin-left: 5px;
@@ -130,4 +130,12 @@ ul.dropdown-menu a.user-btn{
   font-size: 14px;
   color: #fff;
   text-align: center;
+}
+
+ul.dropdown-menu a.user-btn.logout:hover{
+  background-color: #f04134;
+}
+
+ul.dropdown-menu a.user-btn.edit:hover{
+  background-color: #4fb053;
 }

@@ -25,9 +25,6 @@ export default class LocalTime extends Component {
           <div className='time'>
             {this.state.time}
           </div>
-          <div className='logout'>
-            <Button type='danger' onClick={this.toLogout} > 登出</Button>
-          </div>
         </div>
         <div className="skio-header-list">
           <ul>
@@ -49,8 +46,8 @@ export default class LocalTime extends Component {
                       <hr style={{margin: "15 0"}} />
                       <p className="phone">手机号<span className="ng-binding">15088614450</span></p>
                       <p className="manage-user">管理员<span className="ng-binding">xiaofan</span></p>
-                      <a className="user-btn" style={{marginBottom: '10px'}} >修改手机号</a>
-                      <a className="user-btn">退出</a>
+                      <a className="user-btn edit" style={{marginBottom: '10px'}} >修改手机号</a>
+                      <a className="user-btn logout">退出</a>
                   </ul>
               </li>
           </ul>
