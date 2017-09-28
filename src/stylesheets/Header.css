@@ -120,7 +120,7 @@ ul.dropdown-menu p span {
   color: #515151;
 }
 
-ul.dropdown-menu a.user-btn{
+ul.dropdown-menu a.skio-user-btn{
   display: block;
   margin-top: 5px;
   height: 28px;
@@ -132,10 +132,10 @@ ul.dropdown-menu a.user-btn{
   text-align: center;
 }
 
-ul.dropdown-menu a.user-btn.logout:hover{
+ul.dropdown-menu a.skio-user-btn.logout:hover{
   background-color: #f04134;
 }
 
-ul.dropdown-menu a.user-btn.edit:hover{
+ul.dropdown-menu a.skio-user-btn.edit:hover{
   background-color: #4fb053;
 }
