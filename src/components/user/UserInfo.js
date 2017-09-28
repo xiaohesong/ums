@@ -7,7 +7,6 @@ export default class UserInfo extends React.Component {
   }
 
   toggleUserInfo = (e) => {
-    console.log(e.nativeEvent);
     e.stopPropagation()
     this.setState({
       display: !this.state.display
@@ -19,13 +18,6 @@ export default class UserInfo extends React.Component {
     let select = document.getElementById("skio-dropdown-toggle")
     select.addEventListener("click", this.toggleUserInfo);
     document.addEventListener("click", this.toggleUserInfoListener);
-  }
-
-  componentWillUnmount() {
-    console.log("user-info componentWillUnmount");
-    let select = document.getElementById("skio-dropdown-toggle")
-    // select.removeEventListener("click", this.toggleUserInfo);
-    document.removeEventListener("click", this.toggleUserInfoListener);
   }
 
   toggleUserInfoListener = () => {
