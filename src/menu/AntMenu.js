@@ -111,15 +111,6 @@ class AntMenu extends React.Component {
       this.props.toggle()
     }
 
-    toLogout = (e) => {
-        ["user_id", "permissions"].map(item => {
-            localStorage.removeItem(item)
-            return true
-        })
-        window.location.href = '/login'
-        // this.props.history.push(`/`)
-    }
-
     onOpenChange = (openKeys) => {
       this.setState({
         openKeys: openKeys.slice(-1)

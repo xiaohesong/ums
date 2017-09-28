@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Icon} from 'antd';
+import {Icon} from 'antd';
 
 export default class UserInfo extends React.Component {
   state = {
@@ -43,11 +43,21 @@ export default class UserInfo extends React.Component {
                   <hr style={{margin: "15 0"}} />
                   <p className="phone">手机号<span className="ng-binding">15088614450</span></p>
                   <p className="manage-user">管理员<span className="ng-binding">xiaofan</span></p>
-                  <a className="skio-user-btn edit" style={{marginBottom: '10px'}} >修改手机号</a>
-                  <a className="skio-user-btn logout">退出</a>
+                  <a className="skio-user-btn edit" style={{marginBottom: '10px'}} >详细信息</a>
+                  <a className="skio-user-btn logout" onClick={this.toLogout}>退出</a>
               </ul>
           </li>
       </ul>
     )
   }
+
+  toLogout = (e) => {
+      ["user_id", "permissions"].map(item => {
+          localStorage.removeItem(item)
+          return true
+      })
+      window.location.href = '/login'
+      // this.props.history.push(`/`)
+  }
+
 }
