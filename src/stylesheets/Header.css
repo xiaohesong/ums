@@ -67,7 +67,7 @@ div.skio-header-list span.skio-username{
 }
 
 ul.dropdown-menu {
-  display: inline-block;
+  font-family: Hiragino Sans GB,Microsoft Yahei UI,Microsoft Yahei,Glyphicons Halflings,FontAwesome;
   width: 212px;
   right: 100px;
   color: #212121;
@@ -97,4 +97,37 @@ ul.dropdown-menu ::after {
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
     border-bottom: 8px solid #fff;
+}
+
+ul.dropdown-menu h3{
+  font-size: 18px;
+  line-height: 18px;
+}
+
+ul.dropdown-menu hr{
+  margin: 15px 0;
+  border: 0;
+  border-top: 1px solid #eee;
+}
+
+ul.dropdown-menu p {
+  font-size: 12px;
+  line-height: 24px;
+}
+
+ul.dropdown-menu p span {
+  margin-left: 10px;
+  color: #515151;
+}
+
+ul.dropdown-menu a.user-btn{
+  display: block;
+  margin-top: 5px;
+  height: 28px;
+  line-height: 28px;
+  background: #4fb053;
+  border-radius: 2px;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
 }
