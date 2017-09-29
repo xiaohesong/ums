@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import './App.css';
 import Menu from './menu/Index';
-import Login from './components/Login'
+import asyncComponent from './components/AsyncComponent'
+
+const AsyncLogin = asyncComponent(() => import("./components/Login"))
 
 class App extends Component {
     render() {
@@ -13,9 +15,9 @@ class App extends Component {
                     this.renderToRegister()
                 )
             }else{
-                return(
-                    this.renderToLogin()
-                )
+              return(
+                this.renderToLogin()
+              )
             }
 
         }else {
@@ -37,7 +39,7 @@ class App extends Component {
     renderToLogin() {
         return(
             <div>
-                <Login/>
+                <AsyncLogin />
             </div>
         )
     }
