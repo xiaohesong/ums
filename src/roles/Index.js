@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Table, Spin, message} from 'antd';
 import Action from '../permissions/Role'
 import Fetch from '../until/MyFetch'
-
+import "../stylesheets/PageLoading.css"
 
 
 class Index extends React.Component {
