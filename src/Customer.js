@@ -6,6 +6,7 @@ import EditForm from './customers/EditForm';
 import ConfigPermission from './customers/ConfigPermission';
 import Action from "./permissions/Customer";
 import './stylesheets/PageLoading.css';
+import './stylesheets/TableTh.css'
 
 const confirm = Modal.confirm;
 
@@ -138,26 +139,31 @@ export default class Customer extends Component {
             {
                 title: '姓名',// 列表头部显示的文字
                 dataIndex: 'name',
+                className: 'skio-tabel-th',
                 sorter: (a, b) => a.name - b.name
                 // key: 'title'
             },
             {
                 title: '出生年月',
-                dataIndex: 'birth'
+                dataIndex: 'birth',
+                className: 'skio-tabel-th',
                 // key: 'content'
             },
             {
                 title: '手机号',
                 dataIndex: 'phone',
+                className: 'skio-tabel-th',
                 sorter: (a, b) => a.phone - b.phone
             },
             {
                 title: '地址',
+                className: 'skio-tabel-th',
                 dataIndex: 'address'
             },
             {
                 title: 'Action',
                 key: 'action',
+                className: 'skio-tabel-th',
                 render: (text, record) => (
                     <span>
                         <a onClick={this.handleClickEdit} id={record.id}>编辑</a>

@@ -3,7 +3,7 @@ import { Button, Table, Spin, message} from 'antd';
 import Action from '../permissions/Role'
 import Fetch from '../until/MyFetch'
 import "../stylesheets/PageLoading.css"
-
+import "../stylesheets/TableTh.css"
 
 class Index extends React.Component {
     constructor(props){
@@ -22,12 +22,13 @@ class Index extends React.Component {
         const columns = [
             {
                 title: '名称',// 列表头部显示的文字
-                dataIndex: 'name'
-                // key: 'title'
+                dataIndex: 'name',
+                className: 'skio-tabel-th'
             },
             {
                 title: 'Action',
                 key: 'action',
+                className: 'skio-tabel-th',
                 render: (text, record) => (
                     <span>
                         <a onClick={this.toEdit} id={record.id}>编辑</a>
