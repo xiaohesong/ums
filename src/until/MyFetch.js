@@ -5,7 +5,9 @@ var myFetch = {
         return new Promise((resolve, reject) => {
             fetch(`${API_URL}/${path}`,{
                 headers: new Headers({
-                    Authentication: '009aa9774b5cf730a880956fe6caab23'
+                    Authentication: '009aa9774b5cf730a880956fe6caab23',
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
                 })
             }).then(res => {
                 if (res.ok) {
