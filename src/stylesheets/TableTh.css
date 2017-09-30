@@ -1,7 +1,15 @@
 th.skio-tabel-th{
     padding: 0 22px;
     border-radius: 2px;
-    font-size: 14px;
+    font-size: 16px;
     color: #515151;
     font-weight: 400;
+}
+
+td.skio-tabel-th {
+  padding: 23 22px;
+  border-radius: 2px;
+  font-size: 14px;
+  color: #515151;
+  font-weight: 400;
 }
