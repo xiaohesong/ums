@@ -18,7 +18,8 @@ class Login extends React.Component {
                 console.log("Received values of form: ", values);
                 fetch(`${API_URL}/customers`,{
                     headers: new Headers({
-                        "Cache-Control": "no-cache"
+                      'Accept': 'application/json',
+                      'Content-Type': 'application/json',
                     })
                 })
                     .then((resp) => resp.json())
@@ -123,7 +124,8 @@ export default WrappedNormalLoginForm;
 const permission = (roleIds) => {
     fetch(`${API_URL}/roles`,{
         headers: new Headers({
-            'Cache-Control': 'no-cache'
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
         })
     })
         .then(resp => resp.json())
