@@ -1,6 +1,7 @@
 import React from 'react';
 import { Form, Row, Col, Input, Button, Icon } from 'antd';
-import "../stylesheets/SearchForm.css"
+import "../stylesheets/SearchForm.css";
+import '../stylesheets/Button.css'
 const FormItem = Form.Item;
 
 
@@ -41,24 +42,25 @@ class SearchForm extends React.Component {
             className="ant-advanced-search-form"
             onSubmit={this.handleSearch}
             >
-                    <Row gutter={40}>{this.getFields()}</Row>
+                    <Row gutter={20}>{this.getFields()}</Row>
                     <Row>
                       <Col span={24} style={{
-                textAlign: 'right'
-            }}>
+                                                textAlign: 'right'
+                                            }}>
                         <Button icon="search" type="primary" htmlType="submit">搜索</Button>
-                        <Button style={{
-                marginLeft: 8
-            }} onClick={this.handleReset}>
+                        <Button icon='edit' style={{
+                                            marginLeft: 8
+                                        }} onClick={this.handleReset}>
                           清除
                         </Button>
+                        <Button type="dashed" icon='export' style={{marginLeft: 8}}>导出</Button>
 
-                        <Button onClick={this.toNew}>添加用户</Button>
+                        <Button className='skio-button-creator' onClick={this.toNew} style={{marginLeft: 8}} icon="plus">添加</Button>
 
                         <a style={{
-                marginLeft: 8,
-                fontSize: 12
-            }} onClick={this.toggle}>
+                                        marginLeft: 8,
+                                        fontSize: 12
+                                    }} onClick={this.toggle}>
                           {this.state.expand ? '收起' : '展开'} <Icon type={this.state.expand ? 'up' : 'down'} />
                         </a>
                       </Col>
@@ -86,11 +88,11 @@ class SearchForm extends React.Component {
                 <Col span={8} key={i} style={{
                     display: i < count ? 'block' : 'none'
                 }}>
-              <FormItem {...formItemLayout} label={`Field ${i}`}>
-                {getFieldDecorator(`field-${i}`)(
-                    <Input placeholder="placeholder" />
-                )}
-              </FormItem>
+                  <FormItem {...formItemLayout} label={`Field ${i}`}>
+                    {getFieldDecorator(`field-${i}`)(
+                        <Input placeholder="placeholder" />
+                    )}
+                  </FormItem>
             </Col>
             );
         }

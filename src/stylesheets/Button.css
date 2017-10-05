@@ -1,0 +1,11 @@
+button.skio-button-creator{
+	background-color: #4cae4c;
+	color: #fff;
+	border-color: #5cb85c;
+}
+
+button.skio-button-creator:hover{
+	background-color: #5cb85c;
+	color: #fff;
+	border-color: #4cae4c;
+}
