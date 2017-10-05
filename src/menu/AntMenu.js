@@ -1,20 +1,20 @@
 import React from 'react';
 import { Menu, Icon, Switch, message, Button } from 'antd';
-import {Link, withRouter} from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 import Action from './PermissionIndex'
 import Until from '../until/Store'
-const { SubMenu } = Menu;
+const {SubMenu} = Menu;
 
 
 class AntMenu extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props)
         console.log(Until.store("menuCollapsed"));
     }
 
     state = {
-        mode: Until.store("menuMode")  || 'inline',
+        mode: Until.store("menuMode") || 'inline',
         theme: Until.store("menuTheme") || 'light',
         selectedKeys: ['hello'],
         openKeys: []
@@ -36,45 +36,53 @@ class AntMenu extends React.Component {
     }
 
     toCustomer = (e) => {
-      e.preventDefault();
-      if(!Action.customerIndexable()){
-        return message.warning("无权限查看！")
-      }
-      this.props.history.push('/customers')
+        e.preventDefault();
+        if (!Action.customerIndexable()) {
+            return message.warning("无权限查看！")
+        }
+        this.props.history.push('/customers')
     }
 
     toRole = (e) => {
-      e.preventDefault();
-      if(!Action.roleIndexable()){
-        return message.warning("无权限查看！")
-      }
-      this.props.history.push('/tool')
+        e.preventDefault();
+        if (!Action.roleIndexable()) {
+            return message.warning("无权限查看！")
+        }
+        this.props.history.push('/tool')
     }
 
     render() {
         let key = window.location.pathname.split('/')[1] || 'hello'
         let collapsedClass = this.props.collapsed ? "" : "menu-collapsed"
         let displayable = this.props.collapsed ? 'none' : 'inline-block'
-        return(
-            <div style={{width: 240}}>
-                <Button type="primary" className="trigger" onClick={this.toggleCollapsed} style={{ marginBottom: 16 }}>
+        return (
+            <div style={{
+                width: 240
+            }}>
+                <Button type="primary" className="trigger" onClick={this.toggleCollapsed} style={{
+                marginBottom: 16
+            }}>
                   <Icon  type={this.props.collapsed ? 'menu-unfold' : 'menu-fold'} />
                 </Button>
-                <div style={{display: displayable}}>
-                  <span className="ant-divider" style={{ margin: '0 1em' }} />
-                  <Switch onChange={this.changeTheme} defaultChecked={ this.state.theme === 'dark' }/> 主题
+                <div style={{
+                display: displayable
+            }}>
+                  <span className="ant-divider" style={{
+                margin: '0 1em'
+            }} />
+                  <Switch onChange={this.changeTheme} defaultChecked={this.state.theme === 'dark'}/> 主题
                 </div>
                 <br />
                 <br />
                 <Menu
-                    className={collapsedClass}
-                    defaultSelectedKeys={this.state.selectedKeys}
-                    defaultOpenKeys={this.state.openKeys}
-                    onOpenChange={this.onOpenChange}
-                    selectedKeys={[key]}
-                    mode={this.state.mode}
-                    theme={this.state.theme}
-                >
+            className={collapsedClass}
+            defaultSelectedKeys={this.state.selectedKeys}
+            defaultOpenKeys={this.state.openKeys}
+            onOpenChange={this.onOpenChange}
+            selectedKeys={[key]}
+            mode={this.state.mode}
+            theme={this.state.theme}
+            >
                     <Menu.Item key="customers" to='/customers' activeClassName='active'>
                         <Icon type="contacts" />
                         <Link to="/customers" onClick={this.toCustomer}>用户管理</Link>
@@ -102,19 +110,21 @@ class AntMenu extends React.Component {
                     </SubMenu>
 
                 </Menu>
-                <span className="ant-divider" style={{ margin: '0 1em' }} />
+                <span className="ant-divider" style={{
+                margin: '0 1em'
+            }} />
             </div>
         )
     }
 
     toggleCollapsed = () => {
-      this.props.toggle()
+        this.props.toggle()
     }
 
     onOpenChange = (openKeys) => {
-      this.setState({
-        openKeys: openKeys.slice(-1)
-      })
+        this.setState({
+            openKeys: openKeys.slice(-1)
+        })
     }
 }
 

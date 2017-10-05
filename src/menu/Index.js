@@ -12,7 +12,8 @@ const { Sider, Content } = Layout;
 
 const AsyncCustomer = asyncComponent(() => import("../Customer"));
 const AsyncTool = asyncComponent(() => import("../Tool"));
-const AsyncAbout = asyncComponent(() => import("../About"));
+
+  const AsyncAbout = asyncComponent(() => import("../About"));
 
 class MainMenu extends React.Component {
   state = {

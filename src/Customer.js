@@ -5,8 +5,10 @@ import Fetch from './until/MyFetch';
 import EditForm from './customers/EditForm';
 import ConfigPermission from './customers/ConfigPermission';
 import Action from "./permissions/Customer";
+import SearchForm from "./customers/SearchForm"
 import './stylesheets/PageLoading.css';
-import './stylesheets/TableTh.css'
+import './stylesheets/TableTh.css';
+import './stylesheets/Customer.css';
 
 const confirm = Modal.confirm;
 
@@ -179,9 +181,7 @@ export default class Customer extends Component {
         return (
             <div>
                 <div className="new-button">
-                    <div>
-                        <Button onClick={this.toNew}>添加用户</Button>
-                    </div>
+                    <SearchForm toNew={this.toNew}/>
                     <div>
                         <Table columns={columns}
                                rowKey={record => record.id} onChange={this.handleHeaderChange}
