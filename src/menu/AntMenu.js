@@ -57,11 +57,12 @@ class AntMenu extends React.Component {
         let displayable = this.props.collapsed ? 'none' : 'inline-block'
         return (
             <div style={{
-                width: 240
-            }}>
+                            width: 240
+                        }}>
+                <br />
                 <Button type="primary" className="trigger" onClick={this.toggleCollapsed} style={{
-                marginBottom: 16
-            }}>
+                                                                                                    marginBottom: 16
+                                                                                                }}>
                   <Icon  type={this.props.collapsed ? 'menu-unfold' : 'menu-fold'} />
                 </Button>
                 <div style={{
@@ -72,7 +73,6 @@ class AntMenu extends React.Component {
             }} />
                   <Switch onChange={this.changeTheme} defaultChecked={this.state.theme === 'dark'}/> 主题
                 </div>
-                <br />
                 <br />
                 <Menu
             className={collapsedClass}
