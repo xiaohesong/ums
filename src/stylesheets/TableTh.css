@@ -14,6 +14,41 @@ td.skio-tabel-th {
   font-weight: 400;
 }
 
-div.ant-table-scroll{
-  overflow-x: scroll;
+div.ant-table{
+  /*overflow-x: scroll !important;*/
 }
+
+/*div.ant-table-scroll::-webkit-scrollbar{
+  width: 5px;
+  height: 5px;
+}
+
+div.ant-table-scroll::-webkit-scrollbar-thumb{
+  background-color: #4fb053;
+  border-radius: 2px;
+}*/
+
+div.ant-table::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+  background-color: #F5F5F5;
+  border-radius: 10px;
+}
+
+div.ant-table::-webkit-scrollbar
+{
+  width: 10px;
+  background-color: #F5F5F5;
+}
+
+div.ant-table::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  background-color: #eee;
+  background-image: -webkit-linear-gradient(top,
+                        #e4f5fc 0%,
+                        #bfe8f9 50%,
+                        #9fd8ef 51%,
+                        #2ab0ed 100%);
+}
+
