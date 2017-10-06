@@ -13,3 +13,7 @@ td.skio-tabel-th {
   color: #515151;
   font-weight: 400;
 }
+
+div.ant-table-scroll{
+  overflow-x: scroll;
+}

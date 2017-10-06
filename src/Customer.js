@@ -142,6 +142,8 @@ export default class Customer extends Component {
                 title: '姓名',// 列表头部显示的文字
                 dataIndex: 'name',
                 className: 'skio-tabel-th',
+                fixed: 'left',
+                width: 100,
                 sorter: (a, b) => a.name - b.name
                 // key: 'title'
             },
@@ -158,6 +160,48 @@ export default class Customer extends Component {
                 sorter: (a, b) => a.phone - b.phone
             },
             {
+                title: '手机号1',
+                dataIndex: 'phone1',
+                className: 'skio-tabel-th',
+                sorter: (a, b) => a.phone - b.phone
+            },
+            {
+                title: '手机号2',
+                dataIndex: 'phone2',
+                className: 'skio-tabel-th',
+                sorter: (a, b) => a.phone - b.phone
+            },
+            {
+                title: '手机号3',
+                dataIndex: 'phone3',
+                className: 'skio-tabel-th',
+                sorter: (a, b) => a.phone - b.phone
+            },
+            {
+                title: '手机号4',
+                dataIndex: 'phone4',
+                className: 'skio-tabel-th',
+                sorter: (a, b) => a.phone - b.phone
+            },
+            {
+                title: '手机号5',
+                dataIndex: 'phone5',
+                className: 'skio-tabel-th',
+                sorter: (a, b) => a.phone - b.phone
+            },
+            {
+                title: '手机号6',
+                dataIndex: 'phone6',
+                className: 'skio-tabel-th',
+                sorter: (a, b) => a.phone - b.phone
+            },
+            {
+                title: '手机号7',
+                dataIndex: 'phone7',
+                className: 'skio-tabel-th',
+                sorter: (a, b) => a.phone - b.phone
+            },
+            {
                 title: '地址',
                 className: 'skio-tabel-th',
                 dataIndex: 'address'
@@ -166,6 +210,8 @@ export default class Customer extends Component {
                 title: 'Action',
                 key: 'action',
                 className: 'skio-tabel-th',
+                fixed: 'right',
+                width: 180,
                 render: (text, record) => (
                     <span>
                         <a onClick={this.handleClickEdit} id={record.id}>编辑</a>
@@ -185,6 +231,7 @@ export default class Customer extends Component {
                     <div>
                         <Table columns={columns}
                                rowKey={record => record.id} onChange={this.handleHeaderChange}
+                               scroll={{ x: 1600 }}
                                dataSource={this.state.customers}/>
                     </div>
                 </div>
