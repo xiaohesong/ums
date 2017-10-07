@@ -132,7 +132,8 @@ export default class Customer extends Component {
         console.log('customer componentDidMount')
         let self = this
         Fetch.all('customers').then(data => {
-            self.setState({type: 'index', customers: data, pageLoading: false});
+            console.log(data)
+            self.setState({type: 'index', customers: data.customers, pageLoading: false});
         })
     }
 

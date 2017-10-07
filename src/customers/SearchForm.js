@@ -25,7 +25,9 @@ class SearchForm extends React.Component {
             let result = params.join('&')
             console.log('Received values of form: ',JSON.stringify(values), params, result);
             Myfetch.all(`customers?${result}`).then(data => {
-                this.props.search(data)
+            console.log(data)
+
+                this.props.search(data.customers)
             })
         });
     }

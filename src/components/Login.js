@@ -24,7 +24,7 @@ class Login extends React.Component {
                 })
                     .then((resp) => resp.json())
                     .then(function (data) {
-                        let resultData = data.filter(item =>
+                        let resultData = data.customers.filter(item =>
                             item.phone === values.phone
                         )
                         console.log('datashi', data, 'zuihou de shu zu shi ', resultData)
