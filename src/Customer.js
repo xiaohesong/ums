@@ -227,7 +227,7 @@ export default class Customer extends Component {
         return (
             <div>
                 <div className="new-button">
-                    <SearchForm toNew={this.toNew}/>
+                    <SearchForm toNew={this.toNew} search={this.search}/>
                     <div>
                         <Table columns={columns}
                                rowKey={record => record.id} onChange={this.handleHeaderChange}
@@ -239,6 +239,12 @@ export default class Customer extends Component {
                 </div>
             </div>
         );
+    }
+
+    search = (data) => {
+        this.setState({
+            customers: data
+        })
     }
 
     renderEdit() {

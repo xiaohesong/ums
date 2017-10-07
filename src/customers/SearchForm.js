@@ -1,7 +1,8 @@
 import React from 'react';
 import { Form, Row, Col, Input, Button, Icon } from 'antd';
 import "../stylesheets/SearchForm.css";
-import '../stylesheets/Button.css'
+import '../stylesheets/Button.css';
+import Myfetch from '../until/MyFetch'
 const FormItem = Form.Item;
 
 
@@ -17,7 +18,15 @@ class SearchForm extends React.Component {
     handleSearch = (e) => {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
-            console.log('Received values of form: ', values);
+            let params = []
+            Object.keys(values).forEach(key => {
+                params.push(`q[${key}]=${values[key]}`)
+            })
+            let result = params.join('&')
+            console.log('Received values of form: ',JSON.stringify(values), params, result);
+            Myfetch.all(`customers?${result}`).then(data => {
+                this.props.search(data)
+            })
         });
     }
 
@@ -74,6 +83,7 @@ class SearchForm extends React.Component {
     getFields() {
         const count = this.state.expand ? 10 : 6;
         const {getFieldDecorator} = this.props.form;
+        const searchFields = [{key: "name_cont", value: '姓名'}, {key: 'phone_eq', value: '手机号'}]
         const formItemLayout = {
             labelCol: {
                 span: 5
@@ -83,19 +93,20 @@ class SearchForm extends React.Component {
             },
         };
         const children = [];
-        for (let i = 0; i < 10; i++) {
+        searchFields.forEach((item, i) => {
             children.push(
-                <Col span={8} key={i} style={{
-                    display: i < count ? 'block' : 'none'
-                }}>
-                  <FormItem {...formItemLayout} label={`Field ${i}`}>
-                    {getFieldDecorator(`field-${i}`)(
-                        <Input placeholder="placeholder" />
+                <Col span={8} key={i}>
+                  <FormItem {...formItemLayout} label={item['value']}>
+                    {getFieldDecorator(item['key'], {
+                        initialValue: ""
+                    })(
+                        <Input placeholder="请输入查找的内容" />
                     )}
                   </FormItem>
             </Col>
             );
-        }
+        })
+        
         return children;
     }
 }
