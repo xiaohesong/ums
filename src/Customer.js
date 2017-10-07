@@ -232,6 +232,8 @@ export default class Customer extends Component {
                         <Table columns={columns}
                                rowKey={record => record.id} onChange={this.handleHeaderChange}
                                scroll={{ x: 1600 }}
+                               bordered
+                               title={() => "用户列表"}
                                dataSource={this.state.customers}/>
                     </div>
                 </div>
