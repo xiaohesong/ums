@@ -67,7 +67,6 @@ class Index extends React.Component {
     }
 
     componentDidMount() {
-        console.log('ggle')
         Fetch.all("roles").then(data => {
             this.setState({
                 roles: data,

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Button, message, Modal, Table} from 'antd';
+import {message, Modal, Table} from 'antd';
 import Form from './customers/NewForm';
 import Fetch from './until/MyFetch';
 import EditForm from './customers/EditForm';
@@ -148,10 +148,8 @@ export default class Customer extends Component {
     }
 
     componentDidMount() {
-        console.log('customer componentDidMount')
         let self = this
         Fetch.all('customers').then(data => {
-            console.log(data)
             self.setState({
                 type: 'index', 
                 customers: data.customers, 

@@ -9,7 +9,6 @@ class ConfigPermission extends React.Component{
 
     constructor(props){
         super(props)
-        console.log(this.props.customer)
         this.state = {
              customer: this.props.customer,
              roles: [],
@@ -68,7 +67,6 @@ class ConfigPermission extends React.Component{
     }
 
     doSmt = (e) => {
-      console.log(e.target);
       var id = this.state.customer.id;
       var values = {roleIds: this.state.selectIds}
       Fetch.put(values, `customers/${id}`).then(data => {

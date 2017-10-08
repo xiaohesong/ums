@@ -8,11 +8,6 @@ const {SubMenu} = Menu;
 
 
 class AntMenu extends React.Component {
-    constructor(props) {
-        super(props)
-        console.log(Until.store("menuCollapsed"));
-    }
-
     state = {
         mode: Until.store("menuMode") || 'inline',
         theme: Until.store("menuTheme") || 'light',

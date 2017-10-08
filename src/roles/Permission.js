@@ -95,7 +95,6 @@ class Permission extends React.Component {
         var original = this.state.checkedList
         var checkRow = this.state.checkedRow
         var pending = plainOptions.data[index].actions
-        console.log('original is', original)
 
         if (checked) {
             // Add Array to another array, Link to https://stackoverflow.com/questions/351409/how-to-append-something-to-an-array
@@ -104,7 +103,6 @@ class Permission extends React.Component {
             original = original.filter(item => !pending.includes(item))
         }
         checkRow[index] = checked
-        console.log(original);
         this.setState({
             checkedList: original,
             indeterminate: !!original.length && (original.length < options.length),
@@ -170,7 +168,6 @@ class Permission extends React.Component {
     }
 
     componentDidMount() {
-        console.log("shenme", this.state.role)
         this.setState({
             checkedList: this.state.role.permission,
         });

@@ -26,11 +26,6 @@ class EditForm extends React.Component {
         });
     }
     
-    constructor(props) {
-        super(props)
-        console.log("edit form 的 props--" + JSON.stringify(this.props))
-    }
-
     render() {
         const {getFieldDecorator} = this.props.form;
 

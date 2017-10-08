@@ -8,10 +8,6 @@ const API_URL = process.env.REACT_APP_DEV_API_URL
 
 
 class SearchForm extends React.Component {
-    constructor(props){
-        super(props);
-    }
-
     state = {
         expand: false,
         searchParams: ""
@@ -27,7 +23,6 @@ class SearchForm extends React.Component {
             let result = params.join('&')
             console.log('Received values of form: ',JSON.stringify(values), params, result);
             Myfetch.all(`customers?${result}`).then(data => {
-            console.log(data)
                 this.setState({
                     searchParams: result
                 })
@@ -91,7 +86,6 @@ class SearchForm extends React.Component {
 
     // To generate mock Form.Item
     getFields() {
-        const count = this.state.expand ? 10 : 6;
         const {getFieldDecorator} = this.props.form;
         const searchFields = [{key: "name_cont", value: '姓名'}, {key: 'phone_eq', value: '手机号'}]
         const formItemLayout = {

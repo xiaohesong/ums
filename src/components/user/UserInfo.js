@@ -14,7 +14,6 @@ export default class UserInfo extends React.Component {
   }
 
   componentDidMount() {
-    console.log("user-info componentDidmount");
     let select = document.getElementById("skio-dropdown-toggle")
     select.addEventListener("click", this.toggleUserInfo);
     document.addEventListener("click", this.toggleUserInfoListener);
