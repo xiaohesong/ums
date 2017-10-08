@@ -164,11 +164,12 @@ export default class Customer extends Component {
     }
 
     tableChange = (pagination, filters, sorter) => {
-        console.log("women", pagination)
         Fetch.all(`customers?${this.state.searchParams}&page=${pagination.current}`).then(data => {
             this.setState({
                 customers: data.customers,
-                current: pagination.current
+                pagination: {
+                    current: pagination.current
+                }
             })
         })
     }
