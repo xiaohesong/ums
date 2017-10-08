@@ -27,7 +27,7 @@ class SearchForm extends React.Component {
             Myfetch.all(`customers?${result}`).then(data => {
             console.log(data)
 
-                this.props.search(data.customers)
+                this.props.search(data, result)
             })
         });
     }

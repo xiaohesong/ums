@@ -11,13 +11,15 @@ import './stylesheets/TableTh.css';
 import './stylesheets/Customer.css';
 
 const confirm = Modal.confirm;
-
+const defaultPage = 10
 export default class Customer extends Component {
     state = {
         type: 'index',
         pageLoading: true,
         customers: [],
         customer: {},
+        searchParams: "",
+        pagination: {},
         permissionable: {
             indexable: Action.indexable(),
             editable: Action.editable(),
@@ -35,7 +37,13 @@ export default class Customer extends Component {
 
     handleAdd = () => {
         Fetch.all("customers").then(data => {
-            this.setState({type: 'index', customers: data})
+            this.setState({
+                type: 'index', 
+                customers: data.customers,
+                pagination: {
+                    total: data.total_pages * defaultPage,
+                }
+            })
         })
     }
 
@@ -56,7 +64,14 @@ export default class Customer extends Component {
                 onOk() {
                     Fetch.del(id).then(data => {
                         Fetch.all("customers").then(data => {
-                            self.setState({type: 'index', customers: data, pageLoading: false});
+                            self.setState({
+                                type: 'index', 
+                                customers: data.customers, 
+                                pageLoading: false,
+                                pagination: {
+                                    total: data.total_pages * defaultPage,
+                                }
+                            });
                         })
                     })
                 },
@@ -79,15 +94,16 @@ export default class Customer extends Component {
     }
     handleUpdate = () => {
         Fetch.all("customers").then(data => {
-            this.setState({type: 'index', customers: data})
+            this.setState({
+                type: 'index', 
+                customers: data.customers,
+                pagination: {
+                    total: data.total_pages * defaultPage,
+                }
+            })
         })
     }
-    handleHeaderChange = (pagination, filters, sorter) => {
-        this.setState({
-            filteredInfo: filters,
-            sortedInfo: sorter,
-        });
-    }
+    
     toConfigPermission = (e) => {
         e.preventDefault();
         if (!this.state.permissionable.editable) {
@@ -107,7 +123,10 @@ export default class Customer extends Component {
         Fetch.all("customers").then(data => {
             this.setState({
                 type: 'index',
-                customers: data
+                customers: data.customers,
+                pagination: {
+                    total: data.total_pages * defaultPage,
+                }
             })
         })
     }
@@ -133,7 +152,24 @@ export default class Customer extends Component {
         let self = this
         Fetch.all('customers').then(data => {
             console.log(data)
-            self.setState({type: 'index', customers: data.customers, pageLoading: false});
+            self.setState({
+                type: 'index', 
+                customers: data.customers, 
+                pageLoading: false,
+                pagination: {
+                    total: data.total_pages * defaultPage,
+                }
+            });
+        })
+    }
+
+    tableChange = (pagination, filters, sorter) => {
+        console.log("women", pagination)
+        Fetch.all(`customers?${this.state.searchParams}&page=${pagination.current}`).then(data => {
+            this.setState({
+                customers: data.customers,
+                current: pagination.current
+            })
         })
     }
 
@@ -225,16 +261,21 @@ export default class Customer extends Component {
                 ),
             }
         ];
+
+
+        const pagination = this.state.pagination 
         return (
             <div>
                 <div className="new-button">
                     <SearchForm toNew={this.toNew} search={this.search}/>
                     <div>
                         <Table columns={columns}
-                               rowKey={record => record.id} onChange={this.handleHeaderChange}
+                               rowKey={record => record.id}
                                scroll={{ x: 1600 }}
                                bordered
                                title={() => "用户列表"}
+                               pagination={pagination}
+                               onChange={this.tableChange}
                                dataSource={this.state.customers}/>
                     </div>
                 </div>
@@ -242,9 +283,14 @@ export default class Customer extends Component {
         );
     }
 
-    search = (data) => {
+    search = (data, params) => {
         this.setState({
-            customers: data
+            customers: data.customers,
+            pagination: {
+                total: data.total_pages * defaultPage,
+                current: 1
+            },
+            searchParams: params
         })
     }
 
