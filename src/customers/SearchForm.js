@@ -4,6 +4,7 @@ import "../stylesheets/SearchForm.css";
 import '../stylesheets/Button.css';
 import Myfetch from '../until/MyFetch'
 const FormItem = Form.Item;
+const API_URL = process.env.REACT_APP_DEV_API_URL
 
 
 class SearchForm extends React.Component {
@@ -13,6 +14,7 @@ class SearchForm extends React.Component {
 
     state = {
         expand: false,
+        searchParams: ""
     };
 
     handleSearch = (e) => {
@@ -26,7 +28,9 @@ class SearchForm extends React.Component {
             console.log('Received values of form: ',JSON.stringify(values), params, result);
             Myfetch.all(`customers?${result}`).then(data => {
             console.log(data)
-
+                this.setState({
+                    searchParams: result
+                })
                 this.props.search(data, result)
             })
         });
@@ -64,7 +68,7 @@ class SearchForm extends React.Component {
                                         }} onClick={this.handleReset}>
                           清除
                         </Button>
-                        <Button type="dashed" icon='export' style={{marginLeft: 8}}>导出</Button>
+                        <Button type="dashed" onClick={this.toCsv} icon='export' style={{marginLeft: 8}}>导出</Button>
 
                         <Button className='skio-button-creator' onClick={this.toNew} style={{marginLeft: 8}} icon="plus">添加</Button>
 
@@ -78,6 +82,10 @@ class SearchForm extends React.Component {
                     </Row>
                   </Form>
         )
+    }
+
+    toCsv = () => {
+        window.location.href=`${API_URL}/customers.csv?${this.state.searchParams}`
     }
 
 
