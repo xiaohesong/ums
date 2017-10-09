@@ -11,7 +11,7 @@ cd my-app
 npm start
 ```
 
-- [Start Up](https://github.com/xiaohesong/react_blog/wiki/Start-up-app)
+- [Start Up](https://github.com/xiaohesong/ums/wiki/Start-up-app)
 
 - [Basic Deploy](https://github.com/xiaohesong/react_blog/wiki/Deploy-React-App)
 
