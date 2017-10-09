@@ -1,5 +1,5 @@
 ## Basic
-- [Environment](https://github.com/xiaohesong/react_blog/wiki/environment)
+- [Environment](https://github.com/xiaohesong/ums/wiki/environment)
 
 - New React App
 
@@ -13,30 +13,30 @@ npm start
 
 - [Start Up](https://github.com/xiaohesong/ums/wiki/Start-up-app)
 
-- [Basic Deploy](https://github.com/xiaohesong/react_blog/wiki/Deploy-React-App)
+- [Basic Deploy](https://github.com/xiaohesong/ums/wiki/Deploy-React-App)
 
 ## Advanced
 
-- [Ant-Design](https://github.com/xiaohesong/react_blog/wiki/How-To-Use-Ant-Design)
+- [Ant-Design](https://github.com/xiaohesong/ums/wiki/How-To-Use-Ant-Design)
 
-- [Code splitting](https://github.com/xiaohesong/react_blog/wiki/code-splitting)
+- [Code splitting](https://github.com/xiaohesong/ums/wiki/code-splitting)
 
 ## Document
 
-- [Document](https://github.com/xiaohesong/react_blog/wiki/React-documentation)
+- [Document](https://github.com/xiaohesong/ums/wiki/React-documentation)
 
 ## Conclusions
 
-- [Prop With State](https://github.com/xiaohesong/react_blog/wiki/component-state-and-props)
+- [Prop With State](https://github.com/xiaohesong/ums/wiki/component-state-and-props)
 
-- [Big Pit -- 大坑之罩](https://github.com/xiaohesong/react_blog/wiki/PIT(keng))
+- [Big Pit -- 大坑之罩](https://github.com/xiaohesong/ums/wiki/PIT(keng))
 
-- [react-router-dom](https://github.com/xiaohesong/react_blog/wiki/react-router-dom)
+- [react-router-dom](https://github.com/xiaohesong/ums/wiki/react-router-dom)
 
-- [redux入门使用](https://github.com/eyasliu/blog/issues/15)
+- [redux](https://github.com/xiaohesong/ums/wiki/Redux%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93)
 
-- [Upgrade create-react-app 0.9.x=> 1.0.0](https://github.com/xiaohesong/react_blog/wiki/Upgrade-Create-react-app)
+- [Upgrade create-react-app 0.9.x=> 1.0.0](https://github.com/xiaohesong/ums/wiki/Upgrade-Create-react-app)
 
 ## Components
 
-- [components desc](https://github.com/xiaohesong/react_blog/wiki/Components)
+- [components desc](https://github.com/xiaohesong/ums/wiki/Components)
