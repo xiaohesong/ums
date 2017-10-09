@@ -1,14 +1,16 @@
 import React, {Component} from 'react';
 import {message, Modal, Table} from 'antd';
-import Form from './customers/NewForm';
 import Fetch from './until/MyFetch';
-import EditForm from './customers/EditForm';
 import ConfigPermission from './customers/ConfigPermission';
 import Action from "./permissions/Customer";
 import SearchForm from "./customers/SearchForm"
 import './stylesheets/PageLoading.css';
 import './stylesheets/TableTh.css';
 import './stylesheets/Customer.css';
+import asyncComponent from './components/AsyncComponent';
+
+const AsyncEditForm = asyncComponent(() => import('./customers/EditForm'))
+const AsyncNewForm = asyncComponent(() => import("./customers/NewForm"))
 
 const confirm = Modal.confirm;
 const defaultPage = 10
@@ -38,7 +40,7 @@ export default class Customer extends Component {
     handleAdd = () => {
         Fetch.all("customers").then(data => {
             this.setState({
-                type: 'index', 
+                type: 'index',
                 customers: data.customers,
                 pagination: {
                     total: data.total_pages * defaultPage,
@@ -65,8 +67,8 @@ export default class Customer extends Component {
                     Fetch.del(id).then(data => {
                         Fetch.all("customers").then(data => {
                             self.setState({
-                                type: 'index', 
-                                customers: data.customers, 
+                                type: 'index',
+                                customers: data.customers,
                                 pageLoading: false,
                                 pagination: {
                                     total: data.total_pages * defaultPage,
@@ -95,7 +97,7 @@ export default class Customer extends Component {
     handleUpdate = () => {
         Fetch.all("customers").then(data => {
             this.setState({
-                type: 'index', 
+                type: 'index',
                 customers: data.customers,
                 pagination: {
                     total: data.total_pages * defaultPage,
@@ -103,7 +105,7 @@ export default class Customer extends Component {
             })
         })
     }
-    
+
     toConfigPermission = (e) => {
         e.preventDefault();
         if (!this.state.permissionable.editable) {
@@ -151,8 +153,8 @@ export default class Customer extends Component {
         let self = this
         Fetch.all('customers').then(data => {
             self.setState({
-                type: 'index', 
-                customers: data.customers, 
+                type: 'index',
+                customers: data.customers,
                 pageLoading: false,
                 pagination: {
                     total: data.total_pages * defaultPage,
@@ -262,7 +264,7 @@ export default class Customer extends Component {
         ];
 
 
-        const pagination = this.state.pagination 
+        const pagination = this.state.pagination
         return (
             <div>
                 <div className="new-button">
@@ -296,7 +298,7 @@ export default class Customer extends Component {
     renderEdit() {
         return (
             <div className="edit-form">
-                <EditForm handleUpdate={this.handleUpdate} record={this.state.customer}/>
+                <AsyncEditForm handleUpdate={this.handleUpdate} record={this.state.customer}/>
             </div>
         )
     }
@@ -304,7 +306,7 @@ export default class Customer extends Component {
     renderNew() {
         return (
             <div className="new-form">
-                <Form handleAdd={this.handleAdd}/>
+                <AsyncNewForm handleAdd={this.handleAdd}/>
             </div>
         )
     }
