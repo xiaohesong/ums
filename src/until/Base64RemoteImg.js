@@ -13,3 +13,8 @@ export function base64Url(url, callback) {
   xhr.responseType = 'blob';
   xhr.send();
 }
+
+const url = 'http://img15.3lian.com/2015/f1/38/d/41.jpg'
+base64Url(url, (result) => {
+    console.log("result base64 url was", result)
+})
