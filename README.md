@@ -25,6 +25,8 @@ npm start
 
 - [react diff算法](https://github.com/xiaohesong/ums/wiki/diff%E7%AE%97%E6%B3%95)
 
+- [react setState的用法](https://github.com/xiaohesong/ums/wiki/react%E4%B9%8B%60setState%60)
+
 ## Document
 
 - [Document](https://github.com/xiaohesong/ums/wiki/React-documentation)
