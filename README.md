@@ -57,6 +57,8 @@ npm start
 
 - [components desc](https://github.com/xiaohesong/ums/wiki/Components)
 
+- [react生命周期](https://github.com/xiaohesong/ums/wiki/life-cycle)
+
 ## Tools
 
 - [redux-logger](https://github.com/evgenyrodionov/redux-logger)
