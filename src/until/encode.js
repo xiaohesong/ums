@@ -1,6 +1,6 @@
 const crypto = require('crypto')
-const appKey = "cn.com.skio.soul";
-const appSecret = "018PE0P080185D87GACD2038";
+const appKey = "your-key";
+const appSecret = "your-secret";
 
 
 const md5 = (content) => {
